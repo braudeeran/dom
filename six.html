@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+        
+        .validcolor {
+            color: blue;
+        }
+        
+        .invalidcolor {
+            color: red;
+        }
+        
+        p {
+            border: black 1px solid;
+            width: 25%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="">insert your mail:</label>
+    <input type="text">
+    <button onclick="checkMail()">check</button>
+    <p class="hidden valid">valid address</p>
+    <p class="hidden invalid">invalid address</p>
+    <script>
+        let ind = 0;
+        let mailList = ['eran.braude@gmail.com', 'eran.braude@peer39.com', 'testmail@gmail.co.il'];
+
+        function checkMail() {
+            let userMail = document.querySelector('input').value;
+            for (let i of mailList) {
+                if (i === userMail) {
+                    ind = ind + 1;
+                }
+            }
+            if (ind > 0) {
+                document.querySelector('.valid').classList.remove('hidden');
+                document.querySelector('.valid').classList.add('validcolor');
+                document.querySelector('.invalid').classList.add('hidden');
+                ind = 0;
+
+            } else {
+                document.querySelector('.valid').classList.add('hidden');
+                document.querySelector('.invalid').classList.remove('hidden');
+                document.querySelector('.invalid').classList.add('invalidcolor');
+            }
+        }
+    </script>
+</body>
+
+</html>

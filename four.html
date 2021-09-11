@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .green {
+            background-color: green;
+        }
+        
+        .blue {
+            background-color: blue;
+        }
+        
+        .red {
+            background-color: red;
+        }
+        
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <label for="cars">Choose a color:</label>
+
+    <select name="colors" id="colors" onchange="addClass()">
+        <option value="empty"></option>
+        <option value="green">green</option>
+        <option value="blue">blue</option>
+        <option value="red">red</option>
+        <option value="yellow">yellow</option>
+</select>
+
+    <script>
+        function addClass() {
+
+            let colorValue = document.getElementById('colors').value;
+
+            console.log(colorValue);
+
+            document.querySelector('body').className = colorValue;
+
+        }
+    </script>
+
+</body>
+
+</html>

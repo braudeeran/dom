@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="changeElements()">Do you love me?</button>
+    <h1 class='love hidden'>I love you</h1>
+    <h1 class='hidden no-love'>I dont love you</h1>
+
+    <script>
+        let ind = 0;
+        let lastRef;
+
+        function changeElements() {
+
+            if (ind === 1) {
+                document.querySelector('.love').classList.add('hidden');
+                document.querySelector('.no-love').classList.remove('hidden');
+                ind = 0;
+            } else {
+                document.querySelector('.no-love').classList.add('hidden');
+                document.querySelector('.love').classList.remove('hidden');
+                ind = 1;
+            }
+        }
+    </script>
+</body>
+
+</html>
